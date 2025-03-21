@@ -1,8 +1,14 @@
 package com.elton.med.voll.api.endereco;
 
 import jakarta.persistence.Embeddable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Embeddable
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Endereco {
 
     private String logradouro;
@@ -13,22 +19,6 @@ public class Endereco {
     private String cidade;
     private String uf;
 
-    // Construtor padrão (sem argumentos)
-    public Endereco() {
-    }
-
-    // Construtor que recebe todos os campos
-    public Endereco(String logradouro, String bairro, String cep, String numero, String complemento, String cidade, String uf) {
-        this.logradouro = logradouro;
-        this.bairro = bairro;
-        this.cep = cep;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.cidade = cidade;
-        this.uf = uf;
-    }
-
-    // Construtor personalizado para DadosEndereco
     public Endereco(DadosEndereco dados) {
         this.logradouro = dados.logradouro();
         this.bairro = dados.bairro();
@@ -39,64 +29,27 @@ public class Endereco {
         this.complemento = dados.complemento();
     }
 
-    // Getters
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public String getCep() {
-        return cep;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public String getUf() {
-        return uf;
-    }
-
     public void atualizarInformacoes(DadosEndereco dados) {
-        if(dados.logradouro() != null){
+        if (dados.logradouro() != null) {
             this.logradouro = dados.logradouro();
         }
-
-        if(dados.bairro() != null){
+        if (dados.bairro() != null) {
             this.bairro = dados.bairro();
         }
-
-        if(dados.cep() != null){
+        if (dados.cep() != null) {
             this.cep = dados.cep();
         }
-
-        if(dados.uf() != null){
+        if (dados.uf() != null) {
             this.uf = dados.uf();
         }
-
-        if(dados.cidade() != null){
+        if (dados.cidade() != null) {
             this.cidade = dados.cidade();
         }
-
-        if(dados.numero() != null){
+        if (dados.numero() != null) {
             this.numero = dados.numero();
         }
-
-        if(dados.complemento() != null){
+        if (dados.complemento() != null) {
             this.complemento = dados.complemento();
         }
-
-
     }
 }
