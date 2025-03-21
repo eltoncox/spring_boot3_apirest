@@ -1,10 +1,7 @@
 package com.elton.med.voll.api.controller;
 
 import com.elton.med.voll.api.endereco.Endereco;
-import com.elton.med.voll.api.medico.DadosCadastroMedico;
-import com.elton.med.voll.api.medico.DadosListagemMedico;
-import com.elton.med.voll.api.medico.Medico;
-import com.elton.med.voll.api.medico.MedicoRepository;
+import com.elton.med.voll.api.medico.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -34,5 +31,16 @@ public class MedicoController {
         return repository.findAll(paginacao).map(DadosListagemMedico::new);
     }
 
-    
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoMedico dados) {
+
+        var medico = repository.getReferenceById(dados.id());
+        medico.atualizarInformacoes(dados);
+
+    }
+
+
+
+
 }
