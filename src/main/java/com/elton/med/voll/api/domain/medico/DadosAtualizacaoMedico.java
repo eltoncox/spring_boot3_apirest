@@ -1,6 +1,6 @@
-package com.elton.med.voll.api.medico;
+package com.elton.med.voll.api.domain.medico;
 
-import com.elton.med.voll.api.endereco.DadosEndereco;
+import com.elton.med.voll.api.domain.endereco.DadosEndereco;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizacaoMedico(

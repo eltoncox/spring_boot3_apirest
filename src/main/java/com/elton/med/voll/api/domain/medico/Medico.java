@@ -1,6 +1,6 @@
-package com.elton.med.voll.api.medico;
+package com.elton.med.voll.api.domain.medico;
 
-import com.elton.med.voll.api.endereco.Endereco;
+import com.elton.med.voll.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

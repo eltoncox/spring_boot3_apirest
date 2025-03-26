@@ -1,4 +1,4 @@
-package com.elton.med.voll.api.medico;
+package com.elton.med.voll.api.domain.medico;
 
 public enum Especialidade {
 
