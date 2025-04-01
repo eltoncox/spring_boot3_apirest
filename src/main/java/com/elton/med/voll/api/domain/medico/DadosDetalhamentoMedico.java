@@ -10,3 +10,4 @@ public record DadosDetalhamentoMedico(
                 medico.getCrm(), medico.getTelefone(), medico.getEspecialidade(), medico.getEndereco());
     }
 }
+
