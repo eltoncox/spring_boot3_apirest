@@ -36,7 +36,7 @@ public class SecurityFilter extends OncePerRequestFilter {
 //            System.out.println("LOGADO NA REQUISIÇÂO !");
         }
 
-        filterChain.doFilter(request, response);
+        filterChain.doFilter(request, response); // chama o próximo filter
     }
 
     private String recuperarToken(HttpServletRequest request) {
